@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,12 +14,14 @@ import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { MissionControlComponent } from './components/missioncontrol/missioncontrol.component';
 import { AstronautComponent } from './components/astronaut/astronaut.component';
+import { AnimationComponent } from './components/animation/animation.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -27,6 +30,7 @@ import { environment } from '../environments/environment';
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'mission', component: MissionControlComponent },
+      { path: 'animation', component: AnimationComponent },
     ]),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
@@ -39,7 +43,8 @@ import { environment } from '../environments/environment';
     CartComponent,
     ShippingComponent,
     MissionControlComponent,
-    AstronautComponent
+    AstronautComponent,
+    AnimationComponent
   ],
   bootstrap: [
     AppComponent
